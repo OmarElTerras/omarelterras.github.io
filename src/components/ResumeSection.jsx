@@ -8,7 +8,7 @@ export default function ResumeSection() {
         <SectionHeading
           eyebrow="Resume"
           title="Quick access for recruiters and hiring teams"
-          description="The resume preview below points to a local PDF in the public assets folder, so replacing it later is simple."
+          description="A downloadable resume and an embedded preview for quick review."
         />
 
         <div className="resume-layout">
@@ -18,7 +18,6 @@ export default function ResumeSection() {
               The current PDF is stored at
               {" "}
               <code>public/assets/omar-el-terras-resume.pdf</code>.
-              Replace that file with your updated version whenever needed.
             </p>
             <div className="hero-actions">
               <a className="button" href={personalInfo.resumePath} download>

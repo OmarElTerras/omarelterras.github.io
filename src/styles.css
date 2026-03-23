@@ -104,8 +104,10 @@ code {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
   padding: 1rem 0;
   backdrop-filter: blur(18px);
@@ -194,7 +196,7 @@ code {
 }
 
 .hero-section {
-  padding: 5rem 0 3rem;
+  padding: 8rem 0 3rem;
 }
 
 .hero-grid {
