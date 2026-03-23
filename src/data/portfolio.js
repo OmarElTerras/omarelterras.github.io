@@ -30,7 +30,7 @@ export const navLinks = [
 export const aboutStats = [
   { value: "2+", label: "Years Experience" },
   { value: "6+", label: "Projects Completed" },
-  { value: "29", label: "Technologies" },
+  { value: "40+", label: "Technologies" },
 ];
 
 export const experiences = [
@@ -112,29 +112,58 @@ export const projects = [
 
 export const skillGroups = [
   {
-    title: "Languages & Databases",
-    items: ["Java", "SQL", "Python", "JavaScript", "MySQL", "MSSQL", "Cassandra"],
+    title: "Languages",
+    items: ["Java", "JavaScript", "TypeScript", "Python", "C#", "C++", "C"],
   },
   {
-    title: "Backend / APIs / Testing",
+    title: "Frontend",
+    items: ["React", "Vue.js", "HTML/CSS", "AG Grid", "Angular"],
+  },
+  {
+    title: "Backend",
+    items: ["Node.js", "Express.js", "ASP.NET (MVC)", "RESTful APIs", "Authentication (JWT)"],
+  },
+  {
+    title: "Databases",
+    items: ["SQL", "Microsoft SQL Server", "PostgreSQL", "MongoDB"],
+  },
+  {
+    title: "Cloud & DevOps",
+    items: ["AWS", "Google Cloud Platform (GCP)", "Docker", "CI/CD (GitHub Actions/GitLab CI)"],
+  },
+  {
+    title: "Tools & Version Control",
     items: [
-      "REST APIs",
-      "Microservices",
-      "Serenity BDD",
-      "Cucumber",
-      "JUnit",
-      "Playwright",
-      "Selenium",
-      "Postman",
+      "Git",
+      "GitHub",
+      "GitLab",
+      "VS Code",
+      "Visual Studio",
+      "SQL Server Management Studio (SSMS)",
     ],
   },
   {
-    title: "DevOps / Cloud / Build Tools",
-    items: ["Docker", "AWS", "GCP", "Kubernetes", "Maven", "Gradle", "Jenkins", "CI/CD"],
+    title: "Core Competencies",
+    items: [
+      "OOP",
+      "Data Structures & Algorithms",
+      "System Design",
+      "Web Application Development",
+      "Software Development",
+      "Debugging",
+      "Unit Testing (JUnit)",
+    ],
   },
   {
-    title: "Collaboration / Tooling",
-    items: ["Git", "GitLab", "Jira", "Xray", "Confluence", "Grafana"],
+    title: "Data Science",
+    items: [
+      "NumPy",
+      "Pandas",
+      "Matplotlib",
+      "scikit-learn",
+      "TensorFlow",
+      "Model evaluation",
+    ],
   },
 ];
 
