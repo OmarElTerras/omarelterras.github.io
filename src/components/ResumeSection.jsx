@@ -1,44 +1,16 @@
-import { useEffect, useRef, useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
 import SectionHeading from "./SectionHeading";
 import { personalInfo } from "../data/portfolio";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url,
-).toString();
-
 export default function ResumeSection() {
-  const previewContainerRef = useRef(null);
-  const [pageWidth, setPageWidth] = useState(860);
-  const [pageCount, setPageCount] = useState(0);
-
-  useEffect(() => {
-    const container = previewContainerRef.current;
-
-    if (!container) {
-      return undefined;
-    }
-
-    const updateWidth = () => {
-      setPageWidth(Math.min(container.clientWidth - 24, 860));
-    };
-
-    updateWidth();
-
-    const resizeObserver = new ResizeObserver(updateWidth);
-    resizeObserver.observe(container);
-
-    return () => resizeObserver.disconnect();
-  }, []);
+  const previewPath = `${personalInfo.resumePath}#toolbar=0&navpanes=0&scrollbar=1&zoom=page-width`;
 
   return (
     <section className="section" id="resume">
       <div className="container">
         <SectionHeading
           eyebrow="Resume"
-          title="Quick access for recruiters and hiring teams"
-          description="A downloadable resume and an embedded preview for quick review."
+          title="Resume"
+          description="View or download my latest resume."
         />
 
         <div className="resume-panel glass-card reveal">
@@ -52,23 +24,19 @@ export default function ResumeSection() {
           </div>
 
           <div className="resume-preview">
-            <div className="resume-document-shell" ref={previewContainerRef}>
-              <Document
-                file={personalInfo.resumePath}
-                loading={<div className="resume-loading">Loading resume preview...</div>}
-                onLoadSuccess={({ numPages }) => setPageCount(numPages)}
-              >
-                {Array.from({ length: pageCount }, (_, index) => (
-                  <Page
-                    key={`resume-page-${index + 1}`}
-                    pageNumber={index + 1}
-                    width={pageWidth}
-                    renderAnnotationLayer={false}
-                    renderTextLayer={false}
-                  />
-                ))}
-              </Document>
-            </div>
+            <object
+              className="resume-object"
+              data={previewPath}
+              type="application/pdf"
+              aria-label="Resume preview"
+            >
+              <div className="resume-fallback">
+                <p>Preview unavailable in this browser.</p>
+                <a className="button button-ghost" href={personalInfo.resumePath} target="_blank" rel="noreferrer">
+                  Open PDF
+                </a>
+              </div>
+            </object>
           </div>
         </div>
       </div>
