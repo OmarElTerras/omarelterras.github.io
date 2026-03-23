@@ -341,7 +341,6 @@ code {
 }
 
 .about-grid,
-.resume-layout,
 .contact-layout {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -349,7 +348,6 @@ code {
 }
 
 .about-copy,
-.resume-copy,
 .contact-card,
 .contact-form {
   padding: 1.6rem;
@@ -549,8 +547,20 @@ code {
   opacity: 0.65;
 }
 
+.resume-panel {
+  padding: 1.35rem;
+  border-radius: var(--radius-md);
+}
+
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
 .resume-preview {
-  min-height: 36rem;
+  min-height: 42rem;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -650,7 +660,6 @@ code {
 @media (max-width: 1060px) {
   .hero-grid,
   .about-grid,
-  .resume-layout,
   .contact-layout,
   .featured-project {
     grid-template-columns: 1fr;

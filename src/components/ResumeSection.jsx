@@ -11,25 +11,17 @@ export default function ResumeSection() {
           description="A downloadable resume and an embedded preview for quick review."
         />
 
-        <div className="resume-layout">
-          <div className="glass-card resume-copy reveal">
-            <h3>Resume ready for download</h3>
-            <p>
-              The current PDF is stored at
-              {" "}
-              <code>public/assets/omar-el-terras-resume.pdf</code>.
-            </p>
-            <div className="hero-actions">
-              <a className="button" href={personalInfo.resumePath} download>
-                Download Resume
-              </a>
-              <a className="button button-ghost" href={personalInfo.resumePath} target="_blank" rel="noreferrer">
-                Open PDF
-              </a>
-            </div>
+        <div className="resume-panel glass-card reveal">
+          <div className="resume-actions">
+            <a className="button" href={personalInfo.resumePath} download>
+              Download Resume
+            </a>
+            <a className="button button-ghost" href={personalInfo.resumePath} target="_blank" rel="noreferrer">
+              View PDF
+            </a>
           </div>
 
-          <div className="resume-preview reveal">
+          <div className="resume-preview">
             <iframe
               title="Resume preview"
               src={personalInfo.resumePath}
