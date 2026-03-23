@@ -1,8 +1,36 @@
-import { personalInfo } from "../data/portfolio";
+import { useEffect, useRef, useState } from "react";
+import { Document, Page, pdfjs } from "react-pdf";
 import SectionHeading from "./SectionHeading";
+import { personalInfo } from "../data/portfolio";
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url,
+).toString();
 
 export default function ResumeSection() {
-  const previewPath = `${personalInfo.resumePath}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`;
+  const previewContainerRef = useRef(null);
+  const [pageWidth, setPageWidth] = useState(860);
+  const [pageCount, setPageCount] = useState(0);
+
+  useEffect(() => {
+    const container = previewContainerRef.current;
+
+    if (!container) {
+      return undefined;
+    }
+
+    const updateWidth = () => {
+      setPageWidth(Math.min(container.clientWidth - 24, 860));
+    };
+
+    updateWidth();
+
+    const resizeObserver = new ResizeObserver(updateWidth);
+    resizeObserver.observe(container);
+
+    return () => resizeObserver.disconnect();
+  }, []);
 
   return (
     <section className="section" id="resume">
@@ -24,10 +52,23 @@ export default function ResumeSection() {
           </div>
 
           <div className="resume-preview">
-            <iframe
-              title="Resume preview"
-              src={previewPath}
-            />
+            <div className="resume-document-shell" ref={previewContainerRef}>
+              <Document
+                file={personalInfo.resumePath}
+                loading={<div className="resume-loading">Loading resume preview...</div>}
+                onLoadSuccess={({ numPages }) => setPageCount(numPages)}
+              >
+                {Array.from({ length: pageCount }, (_, index) => (
+                  <Page
+                    key={`resume-page-${index + 1}`}
+                    pageNumber={index + 1}
+                    width={pageWidth}
+                    renderAnnotationLayer={false}
+                    renderTextLayer={false}
+                  />
+                ))}
+              </Document>
+            </div>
           </div>
         </div>
       </div>
