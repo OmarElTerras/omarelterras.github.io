@@ -2,6 +2,8 @@ import { personalInfo } from "../data/portfolio";
 import SectionHeading from "./SectionHeading";
 
 export default function ResumeSection() {
+  const previewPath = `${personalInfo.resumePath}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`;
+
   return (
     <section className="section" id="resume">
       <div className="container">
@@ -24,7 +26,7 @@ export default function ResumeSection() {
           <div className="resume-preview">
             <iframe
               title="Resume preview"
-              src={personalInfo.resumePath}
+              src={previewPath}
             />
           </div>
         </div>
