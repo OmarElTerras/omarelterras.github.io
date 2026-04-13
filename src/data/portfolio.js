@@ -1,8 +1,8 @@
 export const personalInfo = {
   name: "Omar El Terras",
-  headline: "Final-year software engineering student at Western with experience in full-stack development and QA automation.",
+  headline: "Recent Software Engineering graduate from Western.",
   intro:
-    "I enjoy building clean software, solving real problems, and learning fast in environments where quality matters.",
+    "Full-stack and QA experience focused on useful, reliable software.",
   email: "omarelterras@gmail.com",
   phone: "5196949493",
   github: "https://github.com/OmarElTerras",
@@ -14,7 +14,7 @@ export const personalInfo = {
     "Full-Stack Developer",
     "Builder of AI-Driven Tools",
   ],
-  resumePath: "/assets/omar-el-terras-resume.pdf",
+  resumePath: "/assets/Omar El Terras - Resume.pdf",
   profileImagePath: "/assets/pfp.png",
 };
 
@@ -112,58 +112,24 @@ export const projects = [
 
 export const skillGroups = [
   {
-    title: "Languages",
-    items: ["Java", "JavaScript", "TypeScript", "Python", "C#", "C++", "C"],
+    title: "Languages & Databases",
+    items: ["Java", "SQL", "Python", "JavaScript", "C#", "C++", "MySQL", "MSSQL", "Cassandra"],
   },
   {
-    title: "Frontend",
-    items: ["React", "Vue.js", "HTML/CSS", "AG Grid", "Angular"],
+    title: "Backend & Testing",
+    items: ["REST APIs", "Microservices", "Serenity BDD", "Cucumber", "JUnit", "Playwright", "Selenium", ".NET"],
   },
   {
-    title: "Backend",
-    items: ["Node.js", "Express.js", "ASP.NET (MVC)", "RESTful APIs", "Authentication (JWT)"],
+    title: "DevOps, Build & Cloud",
+    items: ["Git", "GitLab", "Docker", "AWS", "GCP", "Kubernetes", "Maven", "Gradle", "Jenkins", "CI/CD pipelines"],
   },
   {
-    title: "Databases",
-    items: ["SQL", "Microsoft SQL Server", "PostgreSQL", "MongoDB"],
+    title: "AI & Machine Learning",
+    items: ["GitHub Copilot", "Claude", "ChatGPT", "Codex", "Deep Learning", "NLP", "RAG", "LLMs"],
   },
   {
-    title: "Cloud & DevOps",
-    items: ["AWS", "Google Cloud Platform (GCP)", "Docker", "CI/CD (GitHub Actions/GitLab CI)"],
-  },
-  {
-    title: "Tools & Version Control",
-    items: [
-      "Git",
-      "GitHub",
-      "GitLab",
-      "VS Code",
-      "Visual Studio",
-      "SQL Server Management Studio (SSMS)",
-    ],
-  },
-  {
-    title: "Core Competencies",
-    items: [
-      "OOP",
-      "Data Structures & Algorithms",
-      "System Design",
-      "Web Application Development",
-      "Software Development",
-      "Debugging",
-      "Unit Testing (JUnit)",
-    ],
-  },
-  {
-    title: "Data Science",
-    items: [
-      "NumPy",
-      "Pandas",
-      "Matplotlib",
-      "scikit-learn",
-      "TensorFlow",
-      "Model evaluation",
-    ],
+    title: "Tools & Collaboration",
+    items: ["Postman", "Jira", "Xray", "Confluence", "Grafana"],
   },
 ];
 

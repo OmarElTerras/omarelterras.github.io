@@ -8,13 +8,13 @@ export default function About() {
         <SectionHeading
           eyebrow="About"
           title="An engineer who cares about both quality and usefulness"
-          description="I’m a final-year software engineering student with hands-on experience across product development, QA automation, cloud tooling, and applied software."
+          description="I’m a recent software engineering graduate with hands-on experience across product development, QA automation, cloud tooling, and applied software."
         />
 
         <div className="about-grid">
           <div className="glass-card about-copy reveal">
             <p>
-              I’m currently in my final year at Western and have built experience
+              I recently graduated from Western and have built experience
               through internships, team projects, and applied software work.
             </p>
             <p>
